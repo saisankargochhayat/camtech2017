@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Login &amp; Register Templates</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/form-elements.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+
+</head>
+
+<body>
+
+  <!-- Top content -->
+  <div class="top-content">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text">
+          <h1>Description</h1>
+        </div>
+      </div>
+
+
+
+      <div class="row register-form">
+        <div class="col-sm-6 col-sm-offset-3 ">
+          <form role="form" action="/patient/register" method="post">
+            <div class="form-group col-md-6">
+              <label class="sr-only" for="r-form-age">Age</label>
+              <input placeholder="Age" type="text" onfocus="(this.type='Number')" onblur="(this.type='text') name="age"  class="r-form-first-name form-control" id="age">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="sr-only" for="r-form-date">Due Date</label>
+              <input placeholder="Due Date" type="text" onfocus="(this.type='date')" onblur="(this.type='text') name="edd"  class="r-form-first-name form-control" id="date">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="sr-only" for="r-form-occupation">Occupation</label>
+              <input type="text" name="occupation" required placeholder="Occupation..." class="r-form-email form-control" id="occupation">
+            </div>
+            <div class="form-group col-md-3">
+              <label class="sr-only" for="r-form-weight">Weight</label>
+              <input type="Number" name="weight" placeholder="Weight..." class="r-form-email form-control" id="weight">
+            </div>
+            <div class="form-group col-md-3">
+              <label class="sr-only" for="r-form-height">Height</label>
+              <input type="Number" name="height" placeholder="Height..." class="r-form-email form-control" id="height">
+            </div>
+            <div class="form-group col-md-3">
+              <label class="sr-only" for="r-form-hospitalno">hospitalno</label>
+              <input type="Number" name="hospitalno" placeholder="hospital no..." class="r-form-email form-control" id="hospitalno">
+            </div>
+            <div class="form-group col-md-3">
+              <label class="sr-only" for="r-form-jsyno">jsyno</label>
+              <input type="Number" name="jsyno" placeholder="jsy number..." class="r-form-email form-control" id="jsyno">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="sr-only" for="r-form-gestationage">gestation age</label>
+              <input type="Number" name="gestationage" placeholder="gestation age..." class="r-form-email form-control" id="gestationage">
+            </div>
+            <div class="form-group col-md-6">
+              <select name="delivery" class="r-form-first-name form-control" id="delivery">
+                <option disabled selected value>Enter delivery place</option>
+                <option value="Organisation">Organisation</option>
+                <option value="Home">Home</option>
+              </select>
+            </div>
+
+
+            <div class="form-group col-md-4">
+              <select name="education" class="r-form-first-name form-control" id="education">
+                <option disabled selected value>Education</option>
+                <option value="illiterate">illiterate</option>
+                <option value="primary">primary</option>
+                <option value="middle">middle</option>
+                <option value="high-school">high-school</option>
+                <option value="graduate">graduate</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label class="sr-only" for="r-form-bmi">BMi</label>
+              <input type="Number" name="bmi" placeholder="BMI number..." class="r-form-email form-control" id="bmi">
+            </div>
+            <div class="form-group col-md-4">
+              <select name="rh" class="r-form-first-name form-control" id="rh">
+                <option disabled selected value>Enter rh</option>
+                <option value="Positive">Positive</option>
+                <option value="Negative">Negative</option>
+              </select>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="sr-only" for="r-form-allergy">Allergy ....</label>
+              <input type="textarea" style="height:50px" name="allergy" placeholder="Allergy ......." class="r-form-email form-control" id="allergy">
+            </div>
+            <div class="form-group col-md-6">
+              <select name="bloodgroup" class="r-form-first-name form-control" id="bloodgroup">
+                <option disabled selected value>Enter bloodgroup</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="O">O</option>
+                <option value="AB">AB</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <select name="immstatus" class="r-form-first-name form-control" id="r">
+                <option disabled selected value>Immune Status</option>
+                <option value="Fully-immunised">Fully-immunised</option>
+                <option value="Not-immunised">Not-immunised</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label class="sr-only" for="r-form-liveBirths">liveBirths</label>
+              <input type="Number" name="liveBirths" placeholder="Live Births..." class="r-form-email form-control" id="liveBirths">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="sr-only" for="r-form-prevPregnancies">prevPregnancies</label>
+              <input type="Number" name="prevPregnancies" placeholder="Previous Pregnancies..." class="r-form-email form-control" id="prevPregnancies">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="sr-only" for="r-form-conditions">Existing Conditions</label>
+              <input type="textarea" style="height:50px" name="existingCond" placeholder="Existing Conditions..." class="r-form-email form-control" id="existingCond">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="sr-only" for="r-form-bmi">edd</label>
+              <input placeholder="EDD Date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="edd"  class="r-form-email form-control" id="edd">
+            </div>
+            <div class="form-group col-md-6">
+              <label class="sr-only" for="r-form-bmi">lmp</label>
+              <input placeholder="lmp Date" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="lmp"  class="r-form-email form-control" id="lmp">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="sr-only" for="r-form-pasthistory">Past History ....</label>
+              <input type="textarea" style="height:50px" name="pasthistory" placeholder="Past History ......." class="r-form-email form-control" id="pasthistory">
+            </div>
+            <div class="form-group col-md-12">
+              <label class="sr-only" for="r-form-complications">Complications ....</label>
+              <input type="textarea" style="height:50px" name="complications" placeholder="Complications ......." class="r-form-email form-control" id="complications">
+            </div>
+            <button type="submit" class="btn">Save</button>
+          </form>
+        </div>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-8 col-sm-offset-2">
+          <br>
+          <div class="footer-border"></div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascript -->
+  <script src="/javascript/jquery-1.11.1.min.js"></script>
+  <script src="/javascript/bootstrap.min.js"></script>
+  <script src="/javascript/jquery.backstretch.min.js"></script>
+  <script src="/javascript/scripts.js"></script>
+
+
+</body>
+
+</html>

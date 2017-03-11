@@ -8,7 +8,11 @@ var router = express.Router();
 module.exports = router;
 
 router.get('/register',function(req,res){
-	res.render('pages/register');
+	res.render('register');
+});
+
+router.get('/dashboard',function(req,res){
+	res.render('dashboard');
 });
 
 router.post('/register',function(req,res){
@@ -18,7 +22,6 @@ router.post('/register',function(req,res){
 			console.log(err);
 			res.send(err);
 		}else{
-			console.log(patient);
 			if(patient.isUpdated == true){
 				res.send("Already Updated")
 			}else{
@@ -43,7 +46,6 @@ router.post('/register',function(req,res){
 				patient.pasthistory = req.body.pasthistory;
 				patient.allergy = req.body.allergy;
 				patient.lmp = req.body.lmp;
-				console.log(patient);
 				patient.save(function(err,patient){
 					if(err){
 						res.send(err);
@@ -54,6 +56,5 @@ router.post('/register',function(req,res){
 				});
 			}
 		}
-
-  	});
+	});
  });
