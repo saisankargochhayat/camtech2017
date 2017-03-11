@@ -11,7 +11,7 @@
     "node",
     "npm"
   ],
-  "author": "Anisha Swain",
+  "author": "House Stark",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -28,7 +28,7 @@
     "url": "git+https://github.com/Anisha1234/nodesite.git"
   },
   "bugs": {
-    "url": "https://github.com/Anisha1234/nodesite/issues"
+    "url": "https://github.com/saisankargochhayat/camtech2017/issues"
   },
-  "homepage": "https://github.com/Anisha1234/nodesite#readme"
+  "homepage": "https://github.com/saisankargochhayat/camtech2017#readme"
 }
