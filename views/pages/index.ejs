@@ -1,0 +1,216 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Login &amp; Register Templates</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/form-elements.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+
+  </head>
+
+  <body>
+
+    <!-- Top content -->
+    <div class="top-content">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 text">
+            <h1>Bootstrap Login &amp; Register Forms</h1>
+            <div class="description">
+              <p>
+                Free responsive template made with Bootstrap.
+                Download it on <a href="http://azmind.com" target="_blank">AZMIND</a>,
+                customize and use it as you like!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1 show-forms">
+            <span class="show-register-form active">Register</span>
+            <span class="show-forms-divider">/</span>
+            <span class="show-login-form">Login</span>
+          </div>
+        </div>
+
+        <div class="row register-form">
+          <div class="col-sm-4 col-sm-offset-1">
+            <form role="form" action="/signup" method="post" class="r-form">
+              <div class="form-group">
+                <select name="role" class="r-form-first-name form-control" id="role" onchange="transition(this.value)">
+                  <option value="organisation" selected>Organisation</option>
+                  <option value="patient">Patient</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="r-form-name">Name</label>
+                <input type="text" name="name" required placeholder="Name..." class="r-form-first-name form-control" id="name">
+              </div>
+              <div class="form-group" id="dispmail">
+                <label class="sr-only" for="r-form-email">Email</label>
+                <input type="text" name="email" required placeholder="Email..." class="r-form-email form-control" id="email">
+              </div>
+              <div class="form-group" id="dispcontact" style="display:none">
+                <label class="sr-only" for="r-form-contact">Contact</label>
+                <input type="text" name="contact" placeholder="Contact..." class="r-form-email form-control" id="contact">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="r-form-password">Last name</label>
+                <input type="text" name="password" required placeholder="Password..." class="r-form-last-name form-control" id="password">
+              </div>
+              <button type="submit" class="btn">Sign me up!</button>
+            </form>
+          </div>
+          <div class="col-sm-6 forms-right-icons">
+            <div class="row">
+              <div class="col-sm-2 icon"><i class="fa fa-pencil"></i></div>
+              <div class="col-sm-10">
+                <h3>Beautiful Forms</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-2 icon"><i class="fa fa-commenting"></i></div>
+              <div class="col-sm-10">
+                <h3>Awesome Login</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-2 icon"><i class="fa fa-magic"></i></div>
+              <div class="col-sm-10">
+                <h3>Great Registration</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row login-form">
+          <div class="col-sm-4 col-sm-offset-1">
+            <form role="form" action="/login" method="post" class="l-form">
+              <div class="form-group">
+                <select name="role" class="r-form-first-name form-control" id="role" onchange="transition_log(this.value)">
+                  <option value="organisation" selected>Organisation</option>
+                  <option value="patient">Patient</option>
+                </select>
+              </div>
+              <div class="form-group" id="logmail">
+                <label class="sr-only" for="r-form-email">Email</label>
+                <input type="text" name="email" required placeholder="Email..." class="r-form-email form-control" id="email_log">
+              </div>
+              <div class="form-group" id="logcontact" style="display:none">
+                <label class="sr-only" for="r-form-contact">Contact</label>
+                <input type="text" name="contact" placeholder="Contact..." class="r-form-email form-control" id="contact_log">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="password">Password</label>
+                <input type="password" name="password" placeholder="Password..." class="l-form-password form-control" id="password_log">
+              </div>
+              <button type="submit" class="btn">Sign in!</button>
+            </form>
+            <div class="social-login">
+              <p>Or login with:</p>
+              <div class="social-login-buttons">
+                <a class="btn btn-link-1" href="#"><i class="fa fa-facebook"></i></a>
+                <a class="btn btn-link-1" href="#"><i class="fa fa-twitter"></i></a>
+                <a class="btn btn-link-1" href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 forms-right-icons">
+            <div class="row">
+              <div class="col-sm-2 icon"><i class="fa fa-user"></i></div>
+              <div class="col-sm-10">
+                <h3>New Features</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-2 icon"><i class="fa fa-eye"></i></div>
+              <div class="col-sm-10">
+                <h3>Easy To Use</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-2 icon"><i class="fa fa-twitter"></i></div>
+              <div class="col-sm-10">
+                <h3>Social Integrated</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-sm-8 col-sm-offset-2">
+            <div class="footer-border"></div>
+            <p>Made by <a href="http://azmind.com" target="_blank">AZMIND</a>.</p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="/javascript/jquery-1.11.1.min.js"></script>
+    <script src="/javascript/bootstrap.min.js"></script>
+    <script src="/javascript/jquery.backstretch.min.js"></script>
+    <script src="/javascript/scripts.js"></script>
+    <script>
+    function transition(value) {
+      if (value == 'organisation') {
+        $('#dispcontact').hide();
+        $("#dispcontact").prop('required',false);
+        $('#dispmail').show();
+        $("#dispmail").prop('required',true);
+      }
+      else {
+        $('#dispmail').hide();
+        $("#dispmail").prop('required',false);
+        $('#dispcontact').show();
+        $("#dispcontact").prop('required',true);
+      }
+    }
+    function transition_log(value) {
+      if (value == 'organisation') {
+        $('#logcontact').hide();
+        $("#logcontact").prop('required',false);
+        $('#logmail').show();
+        $("#logmail").prop('required',true);
+      }
+      else {
+        $('#logmail').hide();
+        $("#logmail").prop('required',false);
+        $('#logcontact').show();
+        $("#logcontact").prop('required',true);
+      }
+    }
+
+    </script>
+    <!--[if lt IE 10]>
+    <script src="assets/js/placeholder.js"></script>
+    <![endif]-->
+
+  </body>
+
+  </html>

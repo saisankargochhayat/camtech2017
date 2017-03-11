@@ -8,7 +8,7 @@ var body_parser = require('body-parser');
 //route our app
 var router = require('./routes/router');
 var patient = require('./routes/patient');
-var doctor = require('./routes/doctor');
+var doctor = require('./routes/organisation');
 
 //set static files(css or js or imgs)
 app.use(express.static(__dirname + "/public"));
@@ -30,7 +30,7 @@ app.use(session({
 //express middlewire which have access to all our routes
 app.use('/',router);
 app.use('/patient',patient);
-app.use('/doctor',doctor);
+app.use('/organisation',doctor);
 
 
 //start your server
