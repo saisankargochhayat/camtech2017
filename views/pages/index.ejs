@@ -46,7 +46,7 @@
 
         <div class="row register-form">
           <div class="col-sm-4 col-sm-offset-1">
-            <form role="form" action="signup" method="post">
+            <form role="form" action="signup" method="post" novalidate>
               <div class="form-group">
                 <select name="role" class="r-form-first-name form-control" id="role" onchange="transition(this.value)">
                   <option value="organisation" selected>Organisation</option>
@@ -99,7 +99,7 @@
 
         <div class="row login-form">
           <div class="col-sm-4 col-sm-offset-1">
-            <form role="form" action="login" method="post">
+            <form role="form" action="login" method="post" novalidate>
               <div class="form-group">
                 <select name="role" class="r-form-first-name form-control" id="role" onchange="transition_log(this.value)">
                   <option value="organisation" selected>Organisation</option>
