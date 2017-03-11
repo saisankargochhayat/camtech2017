@@ -1,8 +1,8 @@
 //require express
 var express = require('express');
 var path = require('path');
-var Organisation = require('../model/organisation');
-var Patient = require('../model/patient');
+var Organisation = require('../models/organisation');
+var Patient = require('../models/patient');
 
 //create our router object
 var router = express.Router();
