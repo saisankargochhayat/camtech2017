@@ -92,7 +92,7 @@ router.get('/',authenticateOrganization,function(req,res,next){
   res.render('baad_me_daalenge');
 });
 router.get('/patient/:id',authenticateOrganization,function(req,res,next){
-
+  
 });
 
 
