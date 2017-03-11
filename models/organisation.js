@@ -6,7 +6,7 @@ var organisationSchema = new Schema({
   name: String,
   email: String,
   password: String,
-  patients: {type:[Schema.ObjectId], ref:'patients'}
+  patients: {type:[Schema.ObjectId], ref:'Patient'}
 },{ collection:'organisations'});
 
 // the schema is useless so far
