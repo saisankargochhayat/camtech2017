@@ -17,7 +17,8 @@ router.get('/',function(req,res){
 		res.redirect('/organisation/dashboard');
 	}
 	else if(req.session.contact){
-		Patient.findOne({contact:req.body.contact},function(err,patient){
+		console.log('here');
+		Patient.findOne({contact:req.session.contact},function(err,patient){
 			if(err){
 				console.log(err);
 				res.send(err);
@@ -64,7 +65,7 @@ router.post('/signup',function(req,res){
 							res.send(err);
 						}
 						else{
-							req.session.contact = organisation.contact;
+							req.session.contact = patient.contact;
 							res.redirect('/');
 						}
 					});
