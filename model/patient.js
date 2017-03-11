@@ -3,13 +3,17 @@ var Schema = mongoose.Schema;
 
 // create a schema
 var patientSchema = new Schema({
-  name:String,
-  email: String,
-  password:String,
-  gender:String,
-  contact:Number,
-  college:String,
-  year:String
+  name: String,
+  age: Number,
+  occupation: String,
+  height: Number,
+  weight: Number,
+  bloodgroup: String,
+  prevChildren: Number,
+  existingCond: String,
+  lmp: Date,
+  contact: Number,
+  password: String
 },{ collection:'patients'});
 
 // the schema is useless so far
