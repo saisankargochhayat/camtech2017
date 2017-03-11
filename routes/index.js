@@ -34,7 +34,7 @@ router.get('/',function(req,res){
 		});
 	}
 	else{
-		res.render('pages/index');
+		res.render('index');
 	}
 });
 

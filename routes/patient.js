@@ -8,44 +8,53 @@ var router = express.Router();
 module.exports = router;
 
 router.get('/register',function(req,res){
-	res.render('pages/register');
+	res.render('register');
+});
+
+router.get('/dashboard',function(req,res){
+	res.render('dashboard');
 });
 
 router.post('/register',function(req,res){
 	console.log(req.body);
-	if(!req.body.name){
-		res.send("Please send some data");
-	}
-	console.log("Step 0")
-	var new_patient = new Patient({
-		name : req.body.name,
-		email: req.body.email,
-		password: req.body.password,
-		gender: req.body.gender,
-		contact: req.body.contact,
-		college: req.body.college,
-		year: req.body.year
-	});
-	Patient.findOne ({email:new_patient.email},function(err,patient){
+	Patient.findOne ({contact:req.session.contact},function(err,patient){
 		if(err){
 			console.log(err);
 			res.send(err);
 		}else{
-			if(patient){
-				console.log("Step 1");
-				console.log(patient);
-				res.send("email aready registered")
+			if(patient.isUpdated == true){
+				res.send("Already Updated")
 			}else{
-				new_patient.save(function(err,patient){
+				patient.isUpdated = true;
+				patient.hospitalno = req.body.hospitalno;
+				patient.jsyno = req.body.jsyno;
+				patient.occupation = req.body.occupation;
+				patient.height = req.body.height;
+				patient.weight = req.body.weight;
+				patient.bmi = req.body.bmi;
+				patient.bloodgroup = req.body.bloodgroup;
+				patient.rh = req.body.rh;
+				patient.education = req.body.education;
+				patient.prevPregnancies = req.body.prevPregnancies;
+				patient.liveBirths = req.body.liveBirths;
+				patient.existingCond = req.body.existingCond;
+				patient.edd = req.body.edd;
+				patient.gestationage = req.body.gestationage;
+				patient.delivery = req.body.delivery;
+				patient.complications = req.body.complications;
+				patient.immstatus = req.body.immstatus;
+				patient.pasthistory = req.body.pasthistory;
+				patient.allergy = req.body.allergy;
+				patient.lmp = req.body.lmp;
+				patient.save(function(err,patient){
 					if(err){
 						res.send(err);
 					}
 					else{
-						res.send("Patient succesfully saved !");
+						res.redirect('/');
 					}
 				});
 			}
 		}
-
-  	});
+	});
  });
