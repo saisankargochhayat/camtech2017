@@ -13,7 +13,8 @@ var patientSchema = new Schema({
   existingCond: String,
   lmp: Date,
   contact: Number,
-  password: String
+  password: String,
+  isUpdated: { type: Boolean, default: false }
 },{ collection:'patients'});
 
 // the schema is useless so far
