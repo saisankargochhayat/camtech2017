@@ -14,7 +14,7 @@ module.exports = router;
 
 router.get('/',function(req,res){
 	if(req.session.email){
-		res.render('pages/org-dashboard');
+		res.redirect('/organisation/dashboard');
 	}
 	else if(req.session.contact){
 		Patient.findOne({contact:req.body.contact},function(err,patient){
@@ -24,10 +24,10 @@ router.get('/',function(req,res){
 			}
 			else {
 				if (patient.isUpdated == true) {
-					res.render('pages/patient-dashboard');
+					res.redirect('/patient/dashboard');
 				}
 				else{
-					res.render('pages/register');
+					res.redirect('/patient/register');
 				}
 			}
 		});
