@@ -12,7 +12,7 @@ var patientSchema = new Schema({
   prevChildren: Number,
   existingCond: String,
   lmp: Date,
-  contact: Number,
+  contact: String,
   password: String,
   isUpdated: { type: Boolean, default: false }
 },{ collection:'patients'});
