@@ -29,15 +29,20 @@ function authenticatePatient(req,res,next){
     res.redirect('/')
   }
 }
+
+router.get('/add_patient',authenticateOrganization,function(req,res,next){
+  res.render('pages/org-dashboard');
+})
 router.get('/dashboard',authenticateOrganization,function(req,res,next){
-  Organisation.find({email:req.session.email}).populate('Patient').exec(function(err,orgs){
+  Organisation.find({email:req.session.email}).populate('patients').exec(function(err,orgs){
     if(err){
       console.log(err);
       res.send(err)
     }else{
+      console.log(orgs);
       var render_data = orgs;
-      // res.send(render_data)
-      res.render('dashboard');
+      res.send(render_data);
+      //Send this data to render the organisation dashboard
     }
   })
 })
@@ -64,7 +69,7 @@ router.post('/add_patient',authenticateOrganization,function(req,res,next){
               res.send(err);
             }
             else{
-              Organisation.update({email:req.session.email},{$push:{patients: mongoose.Types.ObjectId(new_patient._id)}},function(err,org){
+              Organisation.update({email:req.session.email},{$push:{patients: new_patient._id}},function(err,org){
                 if(err){
                   console.log(err);
                   res.send(err);
