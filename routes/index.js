@@ -39,7 +39,7 @@ router.get('/',function(req,res){
 
 router.post('/signup',function(req,res){
 	console.log(req.body);
-	if(!req.body.name){
+	if(!req.body){
 		res.send("Please send some data");
 	}
 	console.log("Step 0")
@@ -106,7 +106,7 @@ router.post('/signup',function(req,res){
 	}
 });
 
- router.post('/login',function(req,res){
+router.post('/login',function(req,res){
  	console.log("got post request");
  	//res.send(req.body);
  	if(!req.body.email && req.body.contact){
