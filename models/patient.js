@@ -27,11 +27,11 @@ var patientSchema = new Schema({
   lmp: Date,
   contact: String,
   password: String,
-  hb:Number,
-  urinealbumin:Number,
-  usugar:Number,
-  hiv:String,
-  hbsag:String,
+  // hb:Number,
+  // urinealbumin:Number,
+  // usugar:Number,
+  // hiv:String,
+  // hbsag:String,
   isUpdated: { type: Boolean, default: false }
 },{ collection:'patients'});
 

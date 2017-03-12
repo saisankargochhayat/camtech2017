@@ -15,6 +15,22 @@ router.get('/dashboard',function(req,res){
 	res.render('dashboard');
 });
 
+router.get('/profile',function(req,res){
+	res.render('profile');
+});
+
+router.get('/emergency',function(req,res){
+	res.render('emergency');
+});
+
+router.get('/insurance',function(req,res){
+	res.render('insurance');
+});
+
+router.get('/diet',function(req,res){
+	res.render('diet');
+});
+
 router.post('/register',function(req,res){
 	console.log(req.body);
 	Patient.findOne ({contact:req.session.contact},function(err,patient){
