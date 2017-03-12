@@ -19,6 +19,21 @@ function authenticateOrganization(req,res,next){
     res.redirect('/')
   }
 }
+router.get('/dashboard',function(req,res){
+	res.render('org-dashboard');
+});
+
+router.get('/profile',function(req,res){
+	res.render('org-profile');
+});
+
+router.get('/emergency',function(req,res){
+	res.render('emergency');
+});
+
+router.get('/insurance',function(req,res){
+	res.render('insurance');
+});
 
 function authenticatePatient(req,res,next){
   if(req.session){

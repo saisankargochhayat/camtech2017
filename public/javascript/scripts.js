@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
     /*
         Fullscreen background
     */
-    $.backstretch("/img/1.jpg");
+    $.backstretch("http://res.cloudinary.com/winterfellws/image/upload/v1489282804/IMG_488397_jmbjly.jpg");
 
     /*
         Forms show / hide
