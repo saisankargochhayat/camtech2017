@@ -11,8 +11,8 @@ var json = pat.week;
     <h3 class="panel-title" style="color:black">WEEK <span style="color:black"><%= get_weeks(pat.patient.lmp) %></span></h3>
   </div>
   <div class="panel-body">
-    <%= json.weeks[get_weeks(pat.patient.lmp)%3 - 1].expect %> <br>
-    <%= json.weeks[get_weeks(pat.patient.lmp)%3 - 1].todo %> <br>
+    <%= json.weeks[get_weeks(pat.patient.lmp)%3].expect %> <br>
+    <%= json.weeks[get_weeks(pat.patient.lmp)%3].todo %> <br>
   </div>
 </div>
 <div style="background-color:#b49ed2;color:black;padding-bottom: 5px;padding-right:3px;padding-top: 1px;"><h3>Milestone:</h3></div>
@@ -153,6 +153,6 @@ var json = pat.week;
         </div>
       </div>
     </li>
-  
+
   </ul>
 </div>
