@@ -100,7 +100,7 @@ router.post('/add_patient',authenticateOrganization,function(req,res,next){
                   res.send(err);
                 }else{
                   console.log(org);
-                  res.send("Done")
+                  res.redirect("/")
                 }
             });
           }

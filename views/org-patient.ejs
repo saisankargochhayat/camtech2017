@@ -34,8 +34,7 @@
 <body>
 
 <div class="wrapper">
-<%- include side-bar.ejs %>
-    <div class="main-panel">
+    <div class="main-panel" style="width:100%">
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -45,14 +44,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/new_proposal">Patient Information</a>
+										<h2 style="color: #fff">Patient Information</h2>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="../team/logout">
-                                Log out
-                            </a>
+													<a href="/logout" class="btn btn-default" style="color:white;border-color:white">
+							                Log out
+							            </a>
                         </li>
                     </ul>
                 </div>
@@ -72,19 +71,23 @@ var get_weeks = function(lmp){
                   <div class="col-md-12">
                       <div class="card">
                           <div class="header">
-                              <h2 class="title"><%=patient.name%></h2>
+                              <h3 class="title"><%=patient.name%></h3>
                           </div>
                           <div class="content">
-														<h4>Contact : <%=patient.contact%></h4>
-														<h4>Current Week : <%=get_weeks(patient.lmp)%></h4>
-														<h4>Other info about patient</h4>
+														<h5>Contact : <%=patient.contact%></h5>
+														<h5>Current Week : <%=get_weeks(patient.lmp)%></h5>
+														<h5>Other info about patient</h5>
 														<!-- Other information about patients -->
                           </div>
                       </div>
+											<a href="/" class="btn btn-default" style="text-align:center;margin-left:48%">
+													Back
+											</a>
                   </div>
               </div>
             </div>
         </div>
+
 
 <%- include footer.ejs %>
 
