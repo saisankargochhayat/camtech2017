@@ -44,77 +44,83 @@ router.get('/dashboard',authenticateOrganization,function(req,res,next){
     }else{
       console.log(org);
       var render_data = org;
-      res.render('org-dashboard', {"data":render_data});
+      res.render('org-dashboard', render_data);
       //Send this data to render the organisation dashboard
     }
   })
 });
 
 router.post('/add_patient',authenticateOrganization,function(req,res,next){
-  console.log(req.body);
   if(!req.body){
     res.send("Please send some data");
   }
-  if (req.body.contact) {
-    var new_patient = new Patient({
-      name : req.body.name,
-      password: req.body.password,
-      contact: req.body.contact,
-      isUpdated: true,
-      hospitalno: req.body.hospitalno,
-      jsyno: req.body.jsyno,
-      occupation: req.body.occupation,
-      height: req.body.height,
-      weight: req.body.weight,
-      bmi: req.body.bmi,
-      bloodgroup: req.body.bloodgroup,
-      rh: req.body.rh,
-      education: req.body.education,
-      prevPregnancies: req.body.prevPregnancies,
-      liveBirths: req.body.liveBirths,
-      existingCond: req.body.existingCond,
-      edd: req.body.edd,
-      gestationage: req.body.gestationage,
-      delivery: req.body.delivery,
-      complications: req.body.complications,
-      immstatus: req.body.immstatus,
-      pasthistory: req.body.pasthistory,
-      allergy: req.body.allergy,
-      lmp: req.body.lmp
-    });
-    Patient.findOne ({contact:new_patient.contact},function(err,patient){
-      if(err){
-        console.log(err);
-        res.send(err);
+  var new_patient = new Patient({
+    name : req.body.name,
+    password: req.body.password,
+    contact: req.body.contact,
+    isUpdated: true,
+    hospitalno: req.body.hospitalno,
+    jsyno: req.body.jsyno,
+    occupation: req.body.occupation,
+    height: req.body.height,
+    weight: req.body.weight,
+    bmi: req.body.bmi,
+    bloodgroup: req.body.bloodgroup,
+    rh: req.body.rh,
+    education: req.body.education,
+    prevPregnancies: req.body.prevPregnancies,
+    liveBirths: req.body.liveBirths,
+    existingCond: req.body.existingCond,
+    edd: req.body.edd,
+    gestationage: req.body.gestationage,
+    delivery: req.body.delivery,
+    complications: req.body.complications,
+    immstatus: req.body.immstatus,
+    pasthistory: req.body.pasthistory,
+    allergy: req.body.allergy,
+    lmp: req.body.lmp
+  });
+  console.log(new_patient);
+  Patient.findOne ({contact:new_patient.contact},function(err,patient){
+    if(err){
+      console.log(err);
+      res.send(err);
+    }else{
+      if(patient){
+        res.send("contact aready registered")
       }else{
-        if(patient){
-          res.send("contact aready registered")
-        }else{
-          new_patient.save(function(err,patient){
-            if(err){
-              console.log(err);
-              res.send(err);
-            }
-            else{
-              Organisation.update({email:req.session.email},{$push:{patients: new_patient._id}},function(err,org){
-                  if(err){
-                    console.log(err);
-                    res.send(err);
-                  }else{
-                    console.log(org);
-                    res.send("Done")
-                  }
-              });
-            }
-          });
-        }
+        new_patient.save(function(err,patient){
+          if(err){
+            console.log(err);
+            res.send(err);
+          }
+          else{
+            Organisation.update({email:req.session.email},{$push:{patients: new_patient._id}},function(err,org){
+                if(err){
+                  console.log(err);
+                  res.send(err);
+                }else{
+                  console.log(org);
+                  res.send("Done")
+                }
+            });
+          }
+        });
       }
-    });
-  }
+    }
+  });
 });
 
 router.get('/patient/:id',authenticateOrganization,function(req,res,next){
-
+  var id = req.params.id;
+  Patient.findById(id,function(err,patient){
+    if(err){
+      console.log(err);
+      res.send(err)
+    }else{
+      res.render('org-patient',{patient:patient});
+    }
+  })
 });
 
 
