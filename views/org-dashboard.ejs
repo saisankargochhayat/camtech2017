@@ -50,7 +50,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="../team/logout">
+                            <a href="../logout">
                                 Log out
                             </a>
                         </li>
@@ -69,8 +69,8 @@ var get_weeks = function(lmp){
         <div class="content">
             <div class="container-fluid">
               <div class="row">
-								<% for(var i=0;i<patients.length;i++){
-									var patient = patients[i];
+								<% for(var i=0;i<org.patients.length;i++){
+									var patient = org.patients[i];
 								%>
 								<a href="/organisation/patient/<%= patient._id%>" style="color:inherit;">
                   <div class="col-md-6">

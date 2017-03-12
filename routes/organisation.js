@@ -43,7 +43,7 @@ router.get('/dashboard',authenticateOrganization,function(req,res,next){
       res.send(err)
     }else{
       console.log(org);
-      res.render('org-dashboard', {org: org});
+      res.render('org-dashboard', {"org": org});
       //Send this data to render the organisation dashboard
     }
   })

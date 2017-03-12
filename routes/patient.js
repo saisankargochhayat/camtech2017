@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var Patient = require('../models/patient');
+var json = require('./week.json');
 //create our router object
 var router = express.Router();
 
@@ -12,7 +13,20 @@ router.get('/register',function(req,res){
 });
 
 router.get('/dashboard',function(req,res){
-	res.render('dashboard');
+	Patient.findOne({contact:req.session.contact}, function(err,patient){
+    if(err){
+      console.log(err);
+      res.send(err)
+    }else{
+      console.log(patient);
+			var pat = {
+				patient: patient,
+				week: json
+			}
+      res.render('dashboard', {"pat": pat});
+      //Send this data to render the patient dashboard
+    }
+  });
 });
 
 router.get('/profile',function(req,res){

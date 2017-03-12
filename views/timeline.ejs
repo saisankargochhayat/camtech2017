@@ -1,13 +1,18 @@
+<%
+var get_weeks = function(lmp){
+  var currDate = new Date();
+  var lastDate = new Date(lmp);
+  return Math.round((currDate - lastDate)/1000/60/60/24/7);
+}
+var json = pat.week;
+%>
 <div class="panel panel-violet">
   <div class="panel-heading-violet">
-    <h3 class="panel-title" style="color:black">WEEK <span style="color:black">no</span></h3>
+    <h3 class="panel-title" style="color:black">WEEK <span style="color:black"><%= get_weeks(pat.patient.lmp) %></span></h3>
   </div>
   <div class="panel-body">
-    Panel content
-    <br>
-    <br>
-    <br>
-    <br>
+    <%= json.weeks[get_weeks(pat.patient.lmp)%3 - 1].expect %> <br>
+    <%= json.weeks[get_weeks(pat.patient.lmp)%3 - 1].todo %> <br>
   </div>
 </div>
 <div style="background-color:#b49ed2;color:black;padding-bottom: 5px;padding-right:3px;padding-top: 1px;"><h3>Milestone:</h3></div>
