@@ -19,21 +19,6 @@ function authenticateOrganization(req,res,next){
     res.redirect('/')
   }
 }
-router.get('/dashboard',function(req,res){
-	res.render('org-dashboard');
-});
-
-router.get('/profile',function(req,res){
-	res.render('org-profile');
-});
-
-router.get('/emergency',function(req,res){
-	res.render('emergency');
-});
-
-router.get('/insurance',function(req,res){
-	res.render('insurance');
-});
 
 function authenticatePatient(req,res,next){
   if(req.session){
@@ -58,8 +43,7 @@ router.get('/dashboard',authenticateOrganization,function(req,res,next){
       res.send(err)
     }else{
       console.log(org);
-      var render_data = org;
-      res.render('org-dashboard', render_data);
+      res.render('org-dashboard', {org: org});
       //Send this data to render the organisation dashboard
     }
   })

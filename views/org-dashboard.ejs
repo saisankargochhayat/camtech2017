@@ -34,7 +34,7 @@
 <body>
 
 <div class="wrapper">
-<%- include org-sidebar.ejs %>
+<%- include side-bar.ejs %>
     <div class="main-panel">
         <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
@@ -61,26 +61,26 @@
 
 <%
 var get_weeks = function(lmp){
-	currDate = new Date();
-	lastDate = new Date(lmp);
+	var currDate = new Date();
+	var lastDate = new Date(lmp);
 	return Math.round((currDate - lastDate)/1000/60/60/24/7);
 }
 %>
         <div class="content">
             <div class="container-fluid">
               <div class="row">
-								<%for(var i=0;i<patients.length;i++){
-									patient = patients[i];
+								<% for(var i=0;i<patients.length;i++){
+									var patient = patients[i];
 								%>
 								<a href="/organisation/patient/<%= patient._id%>" style="color:inherit;">
                   <div class="col-md-6">
                       <div class="card">
                           <div class="header">
-                              <h2 class="title"><%=patient.name%></h2>
+                              <h2 class="title"><%= patient.name %></h2>
                           </div>
                           <div class="content">
-														<h4>Contact : <%=patient.contact%></h4>
-														<h4>Current Week : <%=get_weeks(patient.lmp)%></h4>
+														<h4>Contact : <%= patient.contact %></h4>
+														<h4>Current Week : <%= get_weeks(patient.lmp) %></h4>
                           </div>
                       </div>
                   </div>
