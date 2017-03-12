@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap Login &amp; Register Templates</title>
+  <title>PregaHelp</title>
 
   <!-- CSS -->
   <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -35,6 +35,18 @@
         <div class="col-sm-6 col-sm-offset-3 ">
           <form role="form" action="/organisation/add_patient" method="post">
             <div class="form-group col-md-6">
+              <label class="sr-only" for="r-form-age">Name</label>
+              <input placeholder="Name" type="text" name="name" class="r-form-first-name form-control">
+            </div>
+            <div class="form-group col-md-3">
+              <label class="sr-only" for="r-form-age">Contact</label>
+              <input placeholder="Contact" type="text" name="contact"  class="r-form-first-name form-control">
+            </div>
+            <div class="form-group col-md-3">
+              <label class="sr-only" for="r-form-age">Password</label>
+              <input placeholder="Password" type="password" name="password"  class="r-form-first-name form-control">
+            </div>
+            <div class="form-group col-md-6">
               <label class="sr-only" for="r-form-age">Age</label>
               <input placeholder="Age" type="text" onfocus="(this.type='Number')" onblur="(this.type='text') name="age"  class="r-form-first-name form-control" id="age">
             </div>
@@ -44,7 +56,7 @@
             </div>
             <div class="form-group col-md-12">
               <label class="sr-only" for="r-form-occupation">Occupation</label>
-              <input type="text" name="occupation" required placeholder="Occupation..." class="r-form-email form-control" id="occupation">
+              <input type="text" name="occupation" placeholder="Occupation..." class="r-form-email form-control" id="occupation">
             </div>
             <div class="form-group col-md-3">
               <label class="sr-only" for="r-form-weight">Weight</label>

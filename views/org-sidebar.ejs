@@ -13,34 +13,13 @@
               <i>PregaHELP</i>
             </a>
         </div>
-        <ul class="nav">
-            <br>
-            <br>
-
-            <li>
-                <a href="/organisation/dashboard">
-                    <i class="pe-7s-graph"></i>
-                    <p class="nav-btn">dashboard</p>
-                </a>
-            </li>
-            <li>
-                <a href="/organisation/profile">
-                    <i class="pe-7s-user"></i>
-                    <p class="nav-btn">Profile</p>
-                </a>
-            </li>
-            <li>
-                <a href="/organisation/emergency">
-                    <i class="pe-7s-copy-file"></i>
-                    <p class="nav-btn">Emergency</p>
-                </a>
-            </li>
-            <li>
-                <a href="/organisation/insurance">
-                    <i class="pe-7s-copy-file"></i>
-                    <p class="nav-btn">Insurance</p>
-                </a>
-            </li>
+        <ul class="nav" style="text-align:center">
+          <li>
+            <h3><%= org.name %></h3>
+          </li>
+          <li>
+            <h5>Email : <%= org.email %></h5>
+          </li>
         </ul>
   </div>
 </div>
