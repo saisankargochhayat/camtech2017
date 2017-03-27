@@ -1,6 +1,7 @@
 {
   "name": "camtech2017",
   "version": "1.0.0",
+  "description": "A notification app for maternal care during pregnancy",
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www"
